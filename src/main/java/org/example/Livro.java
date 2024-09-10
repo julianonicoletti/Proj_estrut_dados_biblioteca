@@ -28,6 +28,10 @@ public class Livro {
       return emprestado;
    }
 
+   public LinkedList<String> getFilaDeEspera() {
+      return filaDeEspera;
+   }
+
    public void emprestar(String nomeUsuario) {
       if(!emprestado) {
          emprestado = true;

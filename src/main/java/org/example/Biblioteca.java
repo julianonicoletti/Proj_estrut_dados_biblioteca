@@ -12,6 +12,14 @@ public class Biblioteca {
       this.usuarios = new ArrayList<>();
    }
 
+   public List<Livro> getCatalogoLivros() {
+      return catalogoLivros;
+   }
+
+   public List<Usuario> getUsuarios() {
+      return usuarios;
+   }
+
    public void adicionarLivro(Livro livro) {
       catalogoLivros.add(livro);
       System.out.println("Livro adicionado: " + livro.getTitulo() + "\nAutor:" + livro.getAutor());
@@ -24,7 +32,7 @@ public class Biblioteca {
       System.out.println("****************************************");
    }
 
-    private Usuario buscarUsuarioPorNome(String nomeUsuario) {
+    public Usuario buscarUsuarioPorNome(String nomeUsuario) {
       for (Usuario usuario : usuarios) {
          if (usuario.getNome().equalsIgnoreCase(nomeUsuario)) {
             return usuario;
@@ -34,7 +42,7 @@ public class Biblioteca {
       return null;
    }
 
-   private Livro buscaLivroPorTitulo(String tituloLivro) {
+   public Livro buscaLivroPorTitulo(String tituloLivro) {
       for (Livro livro : catalogoLivros) {
          if (livro.getTitulo().equalsIgnoreCase(tituloLivro)) {
             return livro;

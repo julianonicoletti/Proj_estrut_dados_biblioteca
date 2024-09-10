@@ -15,6 +15,10 @@ public class Usuario {
       return nome;
    }
 
+   public List<Livro> getLivrosEmprestados() {
+      return this.livrosEmprestados;
+   }
+
    public void pegarLivro(Livro livro) {
       livrosEmprestados.add(livro);
    }

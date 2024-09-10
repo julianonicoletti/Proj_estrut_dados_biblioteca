@@ -18,4 +18,21 @@ public class TestLivro {
       livro.emprestar("Usuário 1");
       assertTrue(livro.verificaEmprestimo());
    }
+
+   @Test
+   public void testeEmprestarLivroNaoDisponivel(){
+      livro.emprestar("Usuario 1");
+
+      livro.emprestar("Usuário 2");
+
+      assertEquals(1, livro.getFilaDeEspera().size());
+      assertEquals("Usuário 2", livro.getFilaDeEspera().get(0));
+   }
+
+   @Test
+   public void testeDevolverLivro(){
+      livro.emprestar("Usuario 2");
+      livro.devolver();
+      assertFalse(livro.verificaEmprestimo());
+   }
 }
