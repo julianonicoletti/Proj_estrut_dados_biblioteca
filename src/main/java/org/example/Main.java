@@ -31,7 +31,9 @@ public class Main {
                
                                 5. Listar Livros Disponíveis.\
                                 
-                                6. Listar Usuários Cadastrados \
+                                6. Listar Usuários Cadastrados. \
+                                
+                                7. Listar Livros Emprestados. \
                
                                 0. Sair""");
          System.out.println("********************************************");
@@ -73,13 +75,24 @@ public class Main {
             case 5:
                System.out.println("************* LIVROS CADASTRADOS *****************");
                biblioteca.listarCatalogoCadastrado();
-               System.out.println("Aperte alguma tecla para continuar!");
+               System.out.println();
+               System.out.println("Pressione Enter para continuar!");
                entrada.nextLine();
                break;
 
             case 6:
                System.out.println("************* USUARIOS CADASTRADOS ****************");
                biblioteca.listarUsuariosCadastrado();
+               System.out.println();
+               System.out.println("Pressione Enter para continuar!");
+               entrada.nextLine();
+
+            case 7:
+               System.out.println("************* LIVROS EMPRESTADOS ****************");
+               biblioteca.listarLivrosEmprestados();
+               System.out.println();
+               System.out.println("Pressione Enter para continuar!");
+               entrada.nextLine();
          }
       }
    }

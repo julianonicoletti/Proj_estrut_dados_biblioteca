@@ -6,10 +6,12 @@ import java.util.List;
 public class Biblioteca {
    private List<Livro> catalogoLivros;
    private List<Usuario> usuarios;
+   private List<Emprestimo> emprestimos;
 
    public Biblioteca() {
-      this.catalogoLivros = new ArrayList<Livro>();
+      this.catalogoLivros = new ArrayList<>();
       this.usuarios = new ArrayList<>();
+      this.emprestimos = new ArrayList<>();
    }
 
    public List<Livro> getCatalogoLivros() {
@@ -58,6 +60,8 @@ public class Biblioteca {
       if (livro != null && usuario !=null){
          livro.emprestar(nomeUsuario);
          usuario.pegarLivro(livro);
+         Emprestimo emprestimo = new Emprestimo(livro, usuario);
+         emprestimos.add(emprestimo);
       }
    }
 
@@ -67,6 +71,7 @@ public class Biblioteca {
       if (livro != null && usuario !=null){
          livro.devolver();
          usuario.devolverLivro(livro);
+         emprestimos.removeIf(e -> e.getLivro().equals(livro) && e.getUsuario().equals(usuario));
       }
    }
 
@@ -82,5 +87,15 @@ public class Biblioteca {
          System.out.println("Nome: " + usuario.getNome());
          System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
       }
+   }
+
+   public void listarLivrosEmprestados() {
+        if (emprestimos.isEmpty()) {
+            System.out.println("Nenhum livro está emprestado no momento.");
+        } else {
+            for (Emprestimo emprestimo : emprestimos) {
+                System.out.println(emprestimo);
+            }
+        }
    }
 }

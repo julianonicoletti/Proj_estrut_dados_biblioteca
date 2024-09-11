@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-public class TestUsuario {
+public class UsuarioTest {
 
    private Usuario usuario;
    private Livro livro;

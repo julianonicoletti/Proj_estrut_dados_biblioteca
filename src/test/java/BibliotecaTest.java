@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-public class TestBiblioteca {
+public class BibliotecaTest {
    private Biblioteca biblioteca;
    private Livro livro;
    private Usuario usuario;
