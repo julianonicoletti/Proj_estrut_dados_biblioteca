@@ -37,8 +37,7 @@ O projeto está organizado da seguinte forma:
 │               └── example
 │                   ├── BibliotecaTest.java
 │                   ├── LivroTest.java
-│                   ├── UsuarioTest.java
-│                   └── EmprestimoTest.java  # Testes para a classe Emprestimo
+│                   └── UsuarioTest.java
 ├── pom.xml
 └── README.md
 
